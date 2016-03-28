@@ -21,6 +21,9 @@ class ItemsTableViewController: UITableViewController
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
     }
     
     @IBAction func addNewItem(sender: AnyObject)
@@ -134,20 +137,24 @@ class ItemsTableViewController: UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
         
+        
+        cell.updateLabels()
         
         if indexPath.row < itemStore.allItems.count
         {
             let item = itemStore.allItems[indexPath.row]
             
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            cell.nameLabel.text = item.name
+            cell.serialNumberLabel.text = item.serialNumber
+            cell.valueLabel.text = "$\(item.valueInDollars)"
         }
         else
         {
-            cell.textLabel?.text = "End of Item List"
-            cell.detailTextLabel?.text = ""
+            cell.nameLabel.text = "End of Item List"
+            cell.serialNumberLabel.text = ""
+            cell.valueLabel.text = ""
         }
         
         
