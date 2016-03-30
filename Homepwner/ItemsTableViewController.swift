@@ -12,23 +12,37 @@ class ItemsTableViewController: UITableViewController
 {
     var itemStore: ItemStore!
     
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+//        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+//        
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
     }
     
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     @IBAction func addNewItem(sender: AnyObject)
     {
-        let newItem = itemStore.createItem()
+        itemStore.createItem()
         
         //Make a new index path for the 0th section, last row
         let lastRow = tableView.numberOfRowsInSection(0)
@@ -38,21 +52,6 @@ class ItemsTableViewController: UITableViewController
         tableView.reloadData()
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject)
-    {
-        if editing
-        {
-            sender.setTitle("Edit", forState: .Normal)
-            
-            setEditing(false, animated: true)
-        }
-        else
-        {
-            sender.setTitle("Done", forState: .Normal)
-            
-            setEditing(true, animated: true)
-        }
-    }
 
     //MARK: - TableView Delegate/DataSource 
     
@@ -139,7 +138,6 @@ class ItemsTableViewController: UITableViewController
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
         
-        
         cell.updateLabels()
         
         if indexPath.row < itemStore.allItems.count
@@ -158,17 +156,32 @@ class ItemsTableViewController: UITableViewController
             {
                 cell.valueLabel.textColor = UIColor.greenColor()
             }
+            
+            cell.userInteractionEnabled = true
         }
         else
         {
             cell.nameLabel.text = "End of Item List"
             cell.serialNumberLabel.text = ""
             cell.valueLabel.text = ""
+            cell.userInteractionEnabled = false
         }
-        
         
         return cell
     }
 
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowItem"
+        {
+            if let row = tableView.indexPathForSelectedRow?.row
+            {
+                let item = itemStore.allItems[row]
+                let dvc = segue.destinationViewController as! DetailViewController
+                dvc.item = item
+            }
+        }
+    }
+    
 }
