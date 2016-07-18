@@ -8,19 +8,22 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
     
     @IBOutlet var nameField: BorderTextField!
     @IBOutlet var serialNumberField: BorderTextField!
     @IBOutlet var valueField: BorderTextField!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var deleteImageButton: UIButton!
     
     var item: Item! {
         didSet {
             navigationItem.title = item.name
         }
     }
+    var imageStore: ImageStore!
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -54,6 +57,60 @@ class DetailViewController: UIViewController, UITextFieldDelegate
         serialNumberField.text = item.serialNumber
         valueField.text = "\(numberFormatter.stringFromNumber(item.valueInDollars)!)"
         dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
+        
+        imageView.image = imageStore.imageForKey(item.itemKey)
+        
+        if imageView.image != nil
+        {
+            deleteImageButton.enabled = true
+            deleteImageButton.hidden = false
+        }
+        else
+        {
+            deleteImageButton.enabled = false
+            deleteImageButton.hidden = true
+        }
+    }
+    
+    //MARK: - Photo stuff
+    
+    @IBAction func takePhoto(sender: UIBarButtonItem)
+    {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        
+        //IFF the device has a camera pull from camera else pull from library
+        if UIImagePickerController.isSourceTypeAvailable(.Camera)
+        {
+            imagePicker.sourceType = .Camera
+        }
+        else
+        {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+    
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        print(info)
+        
+        imageStore.setImage(image, forKey: item.itemKey)
+        
+        imageView.image = image
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func onDeleteImageButtonTapped(sender: UIButton)
+    {
+        imageStore.deleteImageForKey(item.itemKey)
+        imageView.image = imageStore.imageForKey(item.itemKey)
+        sender.hidden = true
     }
     
     

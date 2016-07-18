@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MJc-ks-3jK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MJc-ks-3jK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dep-Dq-Dti">
-                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <rect key="frame" x="20" y="72" width="560" height="477"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZd-ue-jSQ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
@@ -110,16 +110,16 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2z-tW-KFM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2z-tW-KFM">
                                         <rect key="frame" x="0.0" y="38" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgL-1I-7N0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgL-1I-7N0">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gco-25-Z0f" customClass="BorderTextField" customModule="Homepwner" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gco-25-Z0f" customClass="BorderTextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -129,16 +129,16 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kYv-7y-x6O">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kYv-7y-x6O">
                                         <rect key="frame" x="0.0" y="76" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-R1-vBc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-R1-vBc">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-ha-nEm" customClass="BorderTextField" customModule="Homepwner" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-ha-nEm" customClass="BorderTextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -148,17 +148,17 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1Nd-y3-6C5">
-                                        <rect key="frame" x="0.0" y="114" width="560" height="406"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1Nd-y3-6C5">
+                                        <rect key="frame" x="0.0" y="114" width="560" height="51"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQY-Ts-uYB">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="165"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQY-Ts-uYB">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-xa-qEY">
-                                                <rect key="frame" x="0.0" y="165" width="560" height="241"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-xa-qEY">
+                                                <rect key="frame" x="0.0" y="21" width="560" height="30"/>
                                                 <state key="normal" title="Change Date"/>
                                                 <connections>
                                                     <segue destination="YEQ-CZ-ScJ" kind="show" identifier="DatePicker" id="Z4f-Fo-XNx"/>
@@ -166,20 +166,46 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6u-8q-BGW">
+                                        <rect key="frame" x="0.0" y="172" width="560" height="267"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-rU-b6d">
+                                        <rect key="frame" x="0.0" y="447" width="560" height="30"/>
+                                        <state key="normal" title="Delete Image"/>
+                                        <connections>
+                                            <action selector="onDeleteImageButtonTapped:" destination="n5B-Pf-id3" eventType="touchUpInside" id="MBk-F7-jhT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gco-25-Z0f" firstAttribute="leading" secondItem="X4Y-ha-nEm" secondAttribute="leading" id="ZAH-hs-uak"/>
                                     <constraint firstItem="HHo-QW-iNZ" firstAttribute="leading" secondItem="gco-25-Z0f" secondAttribute="leading" id="uk4-HW-1df"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzw-ON-Afh">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="95v-zJ-1HH"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="nNP-ti-uw3">
+                                        <connections>
+                                            <action selector="takePhoto:" destination="n5B-Pf-id3" id="d30-uM-Bpy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="fMY-IJ-P0Z" firstAttribute="top" secondItem="dep-Dq-Dti" secondAttribute="bottom" constant="8" id="DAu-ig-91f"/>
+                            <constraint firstAttribute="trailing" secondItem="Yzw-ON-Afh" secondAttribute="trailing" id="Jfh-7y-qU9"/>
                             <constraint firstItem="dep-Dq-Dti" firstAttribute="top" secondItem="kus-Jc-8WA" secondAttribute="bottom" constant="8" id="L2G-jI-nMc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dep-Dq-Dti" secondAttribute="trailing" id="cDB-8y-f0T"/>
+                            <constraint firstItem="Yzw-ON-Afh" firstAttribute="top" secondItem="dep-Dq-Dti" secondAttribute="bottom" constant="7" id="fxs-Dk-59X"/>
                             <constraint firstItem="dep-Dq-Dti" firstAttribute="leading" secondItem="XIP-t0-dvg" secondAttribute="leadingMargin" id="i06-wf-WaL"/>
+                            <constraint firstItem="Yzw-ON-Afh" firstAttribute="leading" secondItem="XIP-t0-dvg" secondAttribute="leading" id="jEb-Yn-bUk"/>
+                            <constraint firstItem="fMY-IJ-P0Z" firstAttribute="top" secondItem="Yzw-ON-Afh" secondAttribute="bottom" id="y1L-uj-1D7"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="GxF-rU-PzJ" appends="YES" id="EBG-J8-mMY"/>
@@ -187,6 +213,8 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="RQY-Ts-uYB" id="JBB-xm-5Yx"/>
+                        <outlet property="deleteImageButton" destination="tdk-rU-b6d" id="NfR-fj-wRF"/>
+                        <outlet property="imageView" destination="N6u-8q-BGW" id="cKB-RZ-b3p"/>
                         <outlet property="nameField" destination="HHo-QW-iNZ" id="C0k-XX-AuV"/>
                         <outlet property="serialNumberField" destination="gco-25-Z0f" id="dhX-a3-zYz"/>
                         <outlet property="valueField" destination="X4Y-ha-nEm" id="w1R-YF-kl7"/>
